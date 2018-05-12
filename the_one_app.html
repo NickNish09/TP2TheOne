@@ -159,7 +159,10 @@
         </nav>
         <div class="cd-overlay"></div>
 	
-
+        <!--
+            Luza Rocelina, a namorada do Manuel, leu na moda da romana: "anil é cor azul". 
+            O romano acata amores a damas amadas e Roma ataca o namoro.
+        -->
         <!-- Javascripts -->
         <script src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
         <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -174,9 +177,26 @@
         <script src="assets/plugins/3d-bold-navigation/js/main.js"></script>
         <script src="assets/js/modern.min.js"></script>
         <script src="./theone.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             $("#btn-palindromo").click(function(){
+                console.log($("#palindromo-input").val());
                 console.log(palindrome($("#palindromo-input").val()));
+                if(palindrome($("#palindromo-input").val())){
+                    swal({
+                      title: "É palindromo!",
+                      text: "Parabéns a frase que você digitou é um palíndromo!",
+                      icon: "success",
+                      button: "Aww yiss!",
+                    });
+                }else{
+                    swal({
+                      title: "Não é palindromo!",
+                      text: "Oops, a frase que você digitou não é um palíndromo!",
+                      icon: "error",
+                      button: "Ahh nãooo!",
+                    });
+                }
             });
         </script> 
     </body>
