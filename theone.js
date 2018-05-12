@@ -1,5 +1,5 @@
-
-class Frase {
+// Classe THEONE com o wrapper e o bind
+class THEONE {
 	constructor(v){
 		this._value = v;
 	}
@@ -18,6 +18,7 @@ class Frase {
 	}
 }
 
+//Funções para achar palíndromos
 function upperCase(frase){
 	return frase.toUpperCase();
 }
@@ -35,9 +36,12 @@ function reverseFrase(frase){
 }
 
 function palindrome(frase){
-	var f = new Frase(frase);
-	return (f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value() == f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value());
+	var f = new THEONE(frase);
+	var f_aux = new THEONE(frase);
+	return (f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value()
+	== f_aux.bind(upperCase).bind(removeSpecialCharacters).value());
 }
 
+//Variáveis de teste
 var string_tp2 = "OlA MunDo TP2";
 var string_palindromo = "Luza Rocelina, a namorada do Manuel, leu na moda da romana: \"anil e cor azul\"."
