@@ -123,24 +123,7 @@
                 <div class="col-md-2"></div>
 
                 <div class="col-md-6" id="show-i">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                            <h4 class="modal-title" id="myModalLabel">É palíndromo!!</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <img src="https://media.giphy.com/media/KQBB3QhDw46Uo/giphy.gif" alt="bonifácil" style="width: 100%; height: auto;">
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            
-                                                            <button type="button" class="btn btn-success">Maaaassaaaaa</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <img src="https://media.giphy.com/media/KQBB3QhDw46Uo/giphy.gif" alt="bonifácil" style="width: 85%; height: auto;">
                 </div>
             </div>
             <!-- Row -->
@@ -204,7 +187,7 @@
         <div class="cd-overlay"></div>
 	
         <!--
-            Luza Rocelina, a namorada do Manuel, leu na moda da romana: "anil é cor azul". 
+            Luza Rocelina, a namorada do Manuel, leu na moda da romana: "anil e cor azul". 
             O romano acata amores a damas amadas e Roma ataca o namoro.
         -->
         <!-- Javascripts -->
@@ -223,21 +206,22 @@
         <script src="./theone.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
-            $("#show-if-palindromo").hide();
+            $("#show-i").hide();
             $("#btn-palindromo").click(function(){
                 console.log($("#palindromo-input").val());
                 console.log(palindrome($("#palindromo-input").val()));
                 if(palindrome($("#palindromo-input").val())){
-                    // swal({
-                    //   title: "É palindromo!",
-                    //   text: "Parabéns a frase que você digitou é um palíndromo!",
-                    //   //text: "<img src='https://media.giphy.com/media/KQBB3QhDw46Uo/giphy.gif' style='width:150px; height: 200px;'>",
-                    //   //html: true,
-                    //   icon: "success",
-                    //   button: "Aww yiss!",
-                    // });
-                    $("#myModal").addClass("in");
-                    $("#myModal").css("display","block");
+                    swal({
+                      title: "É palindromo!",
+                      text: "Parabéns a frase que você digitou é um palíndromo!",
+                      //text: "<img src='https://media.giphy.com/media/KQBB3QhDw46Uo/giphy.gif' style='width:150px; height: 200px;'>",
+                      //html: true,
+                      icon: "success",
+                      button: "Aww yiss!",
+                    });
+                    $("#show-i").show();
+                    // $("#myModal").addClass("in");
+                    // $("#myModal").css("display","block");
                 }else{
                     swal({
                       title: "Não é palindromo!",
@@ -245,6 +229,7 @@
                       icon: "error",
                       button: "Ahh nãooo!",
                     });
+                    $("#show-i").hide();
                 }
             });
         </script> 
