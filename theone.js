@@ -1,5 +1,5 @@
 
-class THEONE {
+class Frase {
 	constructor(v){
 		this._value = v;
 	}
@@ -11,6 +11,10 @@ class THEONE {
 
 	printme(){
 		console.log(this._value);
+	}
+
+	value(){
+		return this._value;
 	}
 }
 
@@ -30,4 +34,10 @@ function reverseFrase(frase){
   return reversedFrase;
 }
 
-var frase = new THEONE("OlA MunDo TP2");
+function palindrome(frase){
+	var f = new Frase(frase);
+	return (f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value() == frase.toUpperCase());
+}
+
+var string_tp2 = "OlA MunDo TP2";
+var frase = new Frase(string_tp2);
