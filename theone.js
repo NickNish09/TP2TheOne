@@ -36,8 +36,8 @@ function reverseFrase(frase){
 
 function palindrome(frase){
 	var f = new Frase(frase);
-	return (f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value() == frase.toUpperCase());
+	return (f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value() == f.bind(upperCase).bind(removeSpecialCharacters).bind(reverseFrase).value());
 }
 
 var string_tp2 = "OlA MunDo TP2";
-var frase = new Frase(string_tp2);
+var string_palindromo = "Luza Rocelina, a namorada do Manuel, leu na moda da romana: \"anil e cor azul\"."
