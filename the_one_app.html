@@ -122,7 +122,20 @@
                 </div>
 
                 <div class="col-md-8" id="show-i">
-                <img src="https://media.giphy.com/media/KQBB3QhDw46Uo/giphy.gif" alt="bonifácil" style="width: 85%; height: auto;">
+                    <img src="https://media.giphy.com/media/KQBB3QhDw46Uo/giphy.gif" alt="bonifácil" style="width: 85%; height: auto;">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px; margin-left: 50px;">
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <div class="form-group">
+                              <label for="frase">Frase:</label>
+                              <textarea class="form-control" rows="5" id="frase-escrita"></textarea>
+                            </div>
+                            <button type="button" id="btn-count-frase" class="btn btn-primary">Contar Palavras!</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Row -->
@@ -202,7 +215,8 @@
         <script src="assets/plugins/waves/waves.min.js"></script>
         <script src="assets/plugins/3d-bold-navigation/js/main.js"></script>
         <script src="assets/js/modern.min.js"></script>
-        <script src="./theone.js"></script>
+        
+        <script src="./wordcount.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             $("#show-i").hide();
@@ -232,5 +246,10 @@
                 }
             });
         </script> 
+        <script>
+            $("#btn-count-frase").click(function(){
+                wordCount($("#frase-escrita").val());
+            });
+        </script>
     </body>
 </html>
