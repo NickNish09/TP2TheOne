@@ -56,7 +56,32 @@ function countWords(frase){
 	
 }
 
+function sizeOfHash(obj) {
+    var size = 0, key;
+    for (key in obj) {
+       if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
+
 function wordCount(frase){
 	var f = new THEONE(frase);
-	f.bind(splitWords).bind(uncapitalize).bind(removeStopWords).bind(countWords).printme()
+	var hash;
+	frase_from_hash = "";
+	hash = f.bind(splitWords).bind(uncapitalize).bind(removeStopWords).bind(countWords).value()
+	console.log(sizeOfHash(hash));
+	for (var k in hash) {
+    // use hasOwnProperty to filter out keys from the Object.prototype
+    if (hash.hasOwnProperty(k)) {
+        frase_from_hash += k + " -> " + hash[k] + ", "
+    }
+}
+	for(var i=0; i<sizeOfHash(hash);i++){
+	}
+	swal({
+    title: "Palavras:",
+    text: frase_from_hash,
+    icon: "success",
+    button: "Massa!",
+  });
 }
